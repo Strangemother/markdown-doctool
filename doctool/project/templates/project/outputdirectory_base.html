@@ -1,0 +1,37 @@
+{% extends "project/base.html" %}
+
+{% block body %}
+    <h2>DIR: {{ object.rel_path }}</h2>
+    <ul>
+        <li>here: {{ object.rel_path }}</li>
+        <li>Parent:  <a href='{% url "dir" object.directory.id %}'>{{ object.directory }}</a></li>
+
+        <li>project:
+            <a href='{% url "project-detail" object.project.id %}'>{{ object.project }}</a>
+        </li>
+    </ul>
+
+    <h3>Dirs</h3>
+
+    <ul>
+        {% for dir in object.dirs.all %}
+            <li>
+                <a href='{% url "dir" dir.id %}'>{{ dir }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Files</h3>
+    <ul>
+        {% for file in object.files.all %}
+            <li>
+                <a href='{% url "file" file.id %}'>{{ file }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% block content %}
+
+    {% endblock content %}
+
+{% endblock body %}

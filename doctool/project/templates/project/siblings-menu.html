@@ -1,0 +1,25 @@
+<div class="sibling-menu">
+    {% with parent=object.directory.directory %}
+    <div class="parent-dir">
+        {% if parent != object.directory %}
+        <a href='{% url "dir" parent.id %}'>{{ parent.label }}</a>
+        <span class="dir-sep">/</span>
+        {% endif %}
+        <a href='{% url "dir" object.directory.id %}'>{{ object.directory.label }}/</a>
+    </div>
+    {% endwith %}
+    <ul>
+        {% if object.children %}
+            {% for file in object.children.all %}
+
+                <li class='{% if file.is_labelled is False %}no-label{% endif %} {% if file.id == object.id %}selected{% endif %}'>
+                    <a href='{% url "file" file.id %}'>
+                        <span class="text">{{ file.label }}</span>
+                    </a>
+                </li>
+            {% endfor %}
+        {% else %}
+            <li>No Siblings</li>
+        {% endif %}
+    </ul>
+</div>

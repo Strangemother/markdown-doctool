@@ -1,0 +1,37 @@
+
+<div class="extras">
+
+    <ul>
+        <li>
+            <div>project</div>
+            <div><a href='{% url "project-detail" object.project.id %}'>{{ object.project }}</a></div>
+        </li>
+        <li>
+            {% if object.directory %}
+                <div>directory</div>
+                <div><a href='{% url "dir" object.directory.id %}'>{{ object.directory }}</a></div>
+            {% else %}
+                No Directory
+            {% endif %}
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <div>object</div>
+            <div>{{ object }}</div>
+        </li>
+        <li>
+            <div>original file</div>
+            <div>{{ object.file }}</div>
+        </li>
+        <li>
+            <div>Sim File</div>
+            <div>{{ object.sim_file }}</div>
+        </li>
+        <li>
+            <div>auto build</div>
+            <div>{{ object.auto_build }}</div>
+        </li>
+    </ul>
+</div>

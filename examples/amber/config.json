@@ -1,0 +1,8 @@
+{
+    "name": "Amber",
+    "foo": 2,
+    "output_dir": "../doc_out/",
+    "melt": [
+        "C:/Users/jay/Documents/projects/desktop/docs"
+    ]
+}

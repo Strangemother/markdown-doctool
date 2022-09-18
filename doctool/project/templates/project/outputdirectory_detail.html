@@ -1,0 +1,7 @@
+{% extends "project/outputdirectory_base.html" %}
+{% load static %}
+
+{% block content %}
+    <p>This is a directory page. The content seen here is for the _folder_ {{ object }}</p>
+    <link rel="stylesheet" href='{% static "css/fileoutput-detail.css" %}'>
+{% endblock content %}

@@ -1,0 +1,6 @@
+Django
+Markdown
+markdown2
+md-mermaid
+pymdown-extensions
+pymupdf

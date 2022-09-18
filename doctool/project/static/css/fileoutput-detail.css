@@ -1,0 +1,359 @@
+body {
+    background: #040404fa;
+    color: #0f7642;
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 10vh;
+    margin: -10vh 0 0;
+    position: relative;
+}
+
+
+.rendered > *:first-child:is(h1) {
+    margin-top: 1rem;
+    color: #a9981c;
+}
+
+
+.rendered {
+    max-width: 1020px;
+    margin: 0 auto;
+    font-size: 1.15em;
+    line-height: 1.4em;
+}
+
+.center-content {
+    display: flex;
+    /* max-width: 1280px; */
+    margin: 15vh auto;
+    gap: 2em;
+    justify-content: center;
+}
+
+a {
+    color: inherit;
+    align-items: center;
+    display: inline-flex;
+    gap: 0.2em;
+    text-decoration: none;
+}
+
+.sibling-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sibling-menu ul li a {
+    margin: 0.2em 0em;
+    display: flex;
+    text-decoration: none;
+}
+
+li.no-label a .text {
+    /* border-bottom: dashed 1px; */
+    color: #404040;
+}
+
+li a span.text {
+    /* border-bottom: solid 1px; */
+}
+
+.center-content .pad {
+    flex-grow: 1;
+    display: flex;
+    /* border: solid; */
+    flex-basis: 30%;
+    /* justify-content: flex-end; */
+    flex-direction: column;
+}
+
+.sibling-menu {
+    max-width: 15em;
+    margin-left: auto;
+    position: sticky;
+    top: 4em;
+    /* flex-basis: 21em; */
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 0; */
+    /* flex-shrink: 1; */
+}
+
+.sibling-menu ul li a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border-color: black;
+    margin: 2em;
+    display: block;
+}
+
+.rendered code {
+    background: #020202;
+    padding: 0.1em 0.5em;
+    border-radius: 3px;
+    color: #787e17;
+    white-space: pre-wrap;
+}
+
+.rendered pre {
+    background: #000;
+    border-radius: .4em;
+    margin: 1em 3em 1em 1em;
+    padding: 1em 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #6c610e;
+    /* display: flex; */
+    margin-top: 2em;
+    /* position: sticky; */
+    /* top: 1em; */
+}
+
+.rendered p {
+    /* margin: 1em 1.5em; */
+}
+
+.rendered blockquote {
+    border-left: solid 0.5em black;
+    margin: 1.2em 3em 1.2em 0em;
+    padding: 0.1em 2em;
+    background: #0000006b;
+    display: block;
+}
+
+.footer-pad {
+    min-height: 21vh;
+}
+
+body > footer {
+    background: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 14vh;
+}
+
+.rendered li>p {
+    margin: initial;
+}
+
+.rendered ul {
+    margin: 0.5em;
+}
+
+
+.rendered > ul, .rendered ol {
+    margin: 1em 2em;
+    padding: 0 1em;
+}
+
+li.selected a span.text {
+    text-decoration: underline;
+    color: #6c610e;
+}
+
+.rendered pre code {
+    padding: 0;
+    background: none;
+    line-height: 1.2em;
+    display: flex;
+}
+
+.rendered ul ul, .rendered ol ul {
+    margin: 0.1em;
+    padding: 0 1em;
+}
+
+.center-content .pad.right {
+    justify-content: flex-start;
+}
+
+.toc ul ul {
+    margin: 0;
+    padding: 0.2em 0em 0.5em 1em;
+}
+
+.toc > ul {
+    margin: 0;
+    padding: 0;
+}
+
+.toc ul {
+    list-style: none;
+}
+
+.toc a {
+    text-decoration: none;
+    /* border: solid; */
+    display: block;
+}
+
+.toc {
+    position: sticky;
+    top: 4em;
+}
+
+.block-pad {
+    /* border: solid; */
+    height: 3em;
+}
+
+
+*:target {
+    color: #a9981c;
+}
+
+.toc a.visible {
+    color: #9a981c;
+}
+
+.rendered h1 {
+    /* position: sticky; */
+    /* top: 0rem; */
+    /* background: #080808; */
+    /* display: block; */
+    /* padding: 0.6em 0.5em 0.5em 0em; */
+    font-size: 2.5em;
+    line-height: 1;
+    margin-top: 1.5em;
+}
+
+.parent-dir a {
+    background: #000 padding-box;
+    padding: 0.2em 0.7em;
+    display: inline-flex;
+    border-radius: 0.2em;
+    text-decoration: none;
+}
+
+
+.raw-content pre {white-space: pre-line;flex-grow: 0;padding: 0 2em;}
+
+.raw-content {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    /* border: solid; */
+    max-width: 51em;
+    font-size: 1.1em;
+    /* padding: 0 2em; */
+    background: #070c0d;
+    flex-direction: column;
+}
+
+.raw-content .buttons {
+    display: flex;
+    gap: 0.1em;
+    /* border: solid; */
+    flex-grow: 1;
+    background: #030506;
+    position: sticky;
+    top: 0;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+a.button {
+    padding: 0.7em 1.5em;
+    background: #000;
+    text-decoration: none;
+}
+
+.floaty-top {
+    position: sticky;
+    top: 0;
+    /* border: solid; */
+    display: flex;
+}
+
+
+/* fallback */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v57/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsI.woff2) format('woff2');
+}
+
+.material-symbols-outlined, i {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+
+a i {
+    font-size: 1.2em;
+    display: flex;
+    /* font-size: inherit; */
+    justify-content: center;
+    align-items: center;
+}
+
+.large {
+    font-size: 1.5em;
+}
+
+a.button.round {
+    border-radius: 3em;
+    aspect-ratio: 1;
+}
+
+.margin-1p5em {
+    margin: 1.5em;
+}
+
+.button.no-background {
+    background: none;
+}
+
+.toggleview-edit.edit-mode .text-area .rendered {
+    display: none;
+}
+
+.toggleview-edit.edit-mode .text-area .raw-content {
+    display: flex;
+}
+
+.toggleview-edit-mode .text-area .raw-content {
+    display: none;
+}
+
+pre:focus-within {
+    outline: solid 2px #101009;
+}

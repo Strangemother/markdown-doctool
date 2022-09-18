@@ -1,0 +1,40 @@
+{% extends "project/base.html" %}
+{% load static %}
+
+{% block body %}
+    <h2>Project {{ object.unique_name }}</h2>
+
+    <ul>
+        <li>
+            <a href='{% url "project-list" %}'>Project List</a>
+        </li>
+        {% if object.parent %}
+            <li>parent:
+                <a href='{% url "project-detail" object.parent.id %}'>{{ object.parent }}</a>
+            </li>
+        {% endif %}
+
+    </ul>
+
+    <h3>Directories</h3>
+    <ul>
+        {% for dir in object.outputdirectory_set.all %}
+            <li>
+                <a href='{% url "dir" dir.id %}'>{{ dir }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Files</h3>
+    <ul>
+        {% for file in object.fileoutput_set.all %}
+            <li>
+                <a href='{% url "file" file.id %}'>{{ file }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% block content %}{% endblock content %}
+    <link rel="stylesheet" href='{% static "css/fileoutput-detail.css" %}'>
+
+{% endblock body %}
